@@ -1,4 +1,4 @@
-package com.monitor.common;
+package com.monitor.common.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

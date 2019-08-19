@@ -1,6 +1,5 @@
 package com.monitor.zkmonitor.dao;
 
-import com.monitor.common.ResponseResult;
 import com.monitor.zkmonitor.module.ZKSource;
 
 import java.sql.SQLException;

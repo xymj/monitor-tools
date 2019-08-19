@@ -1,6 +1,6 @@
 package com.monitor.zkmonitor.service;
 
-import com.monitor.common.ResponseResult;
+import com.monitor.common.module.ResponseResult;
 import com.monitor.zkmonitor.module.ZKSource;
 
 /**

@@ -1,7 +1,7 @@
 package com.monitor.zkmonitor.controller;
 
-import com.monitor.common.CommonUtils;
-import com.monitor.common.ResponseResult;
+import com.monitor.common.utils.CommonUtils;
+import com.monitor.common.module.ResponseResult;
 import com.monitor.zkmonitor.module.ZKSource;
 import com.monitor.zkmonitor.service.ZookeeperSourceService;
 import io.swagger.annotations.Api;

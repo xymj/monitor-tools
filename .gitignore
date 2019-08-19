@@ -36,3 +36,6 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/java/com/monitor/rdmonitor/
+src/main/resources/static/
+src/main/resources/templates/

@@ -1,7 +1,8 @@
 package com.monitor.zkmonitor.dao.impl;
 
 import com.google.common.collect.Lists;
-import com.monitor.common.CommonUtils;
+import com.monitor.common.service.LocalCacheService;
+import com.monitor.common.utils.CommonUtils;
 import com.monitor.zkmonitor.aop.H2Aop;
 import com.monitor.zkmonitor.constant.H2SqlConstant;
 import com.monitor.zkmonitor.dao.ZookeeperSourceDao;
@@ -39,6 +40,10 @@ public class ZookeeperSourceDaoImpl implements ZookeeperSourceDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+
+    @Autowired
+    private LocalCacheService cacheService;
+
     public void initTable() throws SQLException {
         jdbcTemplate.execute(H2SqlConstant.INIT_SQL);
         //jdbcTemplate.update(initSql);
@@ -65,6 +70,7 @@ public class ZookeeperSourceDaoImpl implements ZookeeperSourceDao {
     @H2Aop("update")
     @Override
     public Integer update(ZKSource zkSource) throws SQLException {
+        cacheService.invalidate(zkSource.getId());
         return jdbcTemplate.update(H2SqlConstant.UPDATE_SQL, preparedStatement -> {
             preparedStatement.setString(1,zkSource.getDesc());
             preparedStatement.setString(2,zkSource.getConnectStr());
@@ -76,6 +82,7 @@ public class ZookeeperSourceDaoImpl implements ZookeeperSourceDao {
     @H2Aop("delete")
     @Override
     public Integer delete(String id) throws SQLException {
+        cacheService.invalidate(id);
         return jdbcTemplate.update(H2SqlConstant.DELETE_SQl, ps -> {
             ps.setString(1, id);
         });

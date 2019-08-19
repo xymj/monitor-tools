@@ -1,8 +1,9 @@
-package com.monitor.common;
+package com.monitor.common.module;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @Author: xymj
@@ -22,9 +23,9 @@ public class ResponseResult {
     private Object data;
 
     public ResponseResult(Object data) {
-        status = Status.SUCESS.getCode();
-        msg = "SUCESS";
-        data = data;
+        this.status = Status.SUCESS.getCode();
+        this.msg = "SUCESS";
+        this.data = data;
     }
 
 

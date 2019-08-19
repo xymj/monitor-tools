@@ -1,11 +1,8 @@
 package com.monitor.zkmonitor.aop;
 
-import com.monitor.common.ResponseResult;
-import com.monitor.common.Status;
 import com.monitor.zkmonitor.module.ZKSource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -13,7 +10,6 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.sql.SQLException;
 import java.util.List;
 
 /**

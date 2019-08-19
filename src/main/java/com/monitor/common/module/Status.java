@@ -1,4 +1,4 @@
-package com.monitor.common;
+package com.monitor.common.module;
 
 /**
  * @Author: xymj
